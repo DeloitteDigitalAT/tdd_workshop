@@ -1,16 +1,16 @@
-#Deloitte Digital Austria Introduction to TDD Workshop
+# Deloitte Digital Austria Introduction to TDD Workshop
 
-##Author
+## Author
 - Jean D'Amore
 - Lead Architect
 - jdamore@deloitte.at
 
-##Synopsis
+## Synopsis
 
 This project aims at demonstrating the techniques 
 and benefits of TDD though a simple example.
 
-##Installation
+## Installation
 
 To work on this project you will need:
 * `Java 8` or above
@@ -22,7 +22,7 @@ all modules simply run at the root of the project:
 mvn clean install
 ```
 
-##Lessons
+## Lessons
 
 This project is structured with the following modules, each one representing a lesson:
 * `lesson0`: Setup of the project
@@ -35,7 +35,7 @@ In addition, we have added a module called `scratchpad`, which can be used by wo
 participants to try their own code.
 
 
-##The Example
+## The Example
 
 The example code implements a simple temperature control system.
 
