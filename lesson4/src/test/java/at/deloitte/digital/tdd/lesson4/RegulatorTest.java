@@ -9,6 +9,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -24,6 +26,14 @@ public class RegulatorTest {
         currentTemperature = 20;
         when(mockThermometer.readTemperature()).thenReturn(currentTemperature);
         regulator = new Regulator(mockThermometer);
+    }
+
+    @Test
+    public void shouldReadTemperatureFromThermometer() {
+
+        regulator.regulate(currentTemperature+5);
+
+        verify(mockThermometer, times(1)).readTemperature();
     }
 
     @Test
