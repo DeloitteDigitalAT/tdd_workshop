@@ -43,11 +43,8 @@ The example code implements a simple temperature control system.
 increment +1 for increase or -1 for decrease depending on the current temperature 
 and the desired temperature.
 
-* The `Thermometer` (lesson 4 onwards) has one public method `readTemperature()`
+* The `Thermometer` (lesson 4) has one public method `readTemperature()`
 that simulated a thermometer by reading temperature values from a CSV file.
-
-* The `Heater` (lesson 5 onwards) has one public method `heat()` that produces
-heat based on the heater new position.
 
 
 
