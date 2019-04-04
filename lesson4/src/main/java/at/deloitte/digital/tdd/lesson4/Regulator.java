@@ -12,7 +12,8 @@ public class Regulator {
     public int regulate(int desiredTemperature) {
 
         if(desiredTemperature<0) {
-            throw new IllegalArgumentException("The desired temperature cannot be >0");
+            throw new IllegalArgumentException
+                    ("The desired temperature cannot be >0");
         }
         return Integer.signum(desiredTemperature - thermometer.readTemperature());
     }
