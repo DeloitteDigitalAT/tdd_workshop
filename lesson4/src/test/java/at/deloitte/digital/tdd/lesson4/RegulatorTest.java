@@ -1,5 +1,6 @@
 package at.deloitte.digital.tdd.lesson4;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,23 +10,27 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RegulatorTest {
 
+    private int currentTemperature;
     private Regulator regulator;
 
     @Mock private Thermometer mockThermometer;
-    private int currentTemperature;
 
     @Before
     public void setup() {
         currentTemperature = 20;
         when(mockThermometer.readTemperature()).thenReturn(currentTemperature);
         regulator = new Regulator(mockThermometer);
+    }
+
+    @After
+    public void tearDown() {
+        regulator = null;
+        reset(mockThermometer);
     }
 
     @Test

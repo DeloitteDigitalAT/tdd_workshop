@@ -1,5 +1,6 @@
 package at.deloitte.digital.tdd.lesson3;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,18 +8,25 @@ import static org.junit.Assert.assertEquals;
 
 public class RegulatorTest {
 
+    private int currentTemperature;
     private Regulator regulator;
 
     @Before
     public void setup() {
         regulator = new Regulator();
+        currentTemperature = 20;
+    }
+
+    @After
+    public void tearDown() {
+        regulator = null;
     }
 
     @Test
     public void shouldReturnPlusOne() {
 
         int temperatureIncement =
-                regulator.regulate(25, 20);
+                regulator.regulate(currentTemperature+1, currentTemperature);
 
         assertEquals(1, temperatureIncement);
     }
@@ -27,7 +35,7 @@ public class RegulatorTest {
     public void shouldReturnMinusOne() {
 
         int temperatureIncement =
-                regulator.regulate(20, 25);
+                regulator.regulate(currentTemperature-1, currentTemperature);
 
         assertEquals(-1, temperatureIncement);
     }
@@ -36,7 +44,7 @@ public class RegulatorTest {
     public void shouldReturnZero() {
 
         int temperatureIncement =
-                regulator.regulate(25, 25);
+                regulator.regulate(currentTemperature, currentTemperature);
 
         assertEquals(0, temperatureIncement);
     }
